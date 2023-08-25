@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe{
+            border: black 3px solid;
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <iframe src="https://www.abc.com.py/" title="diarios" id="screen"></iframe>
+    <br><br><br><br>
+    <button onclick="changeleft()">◀️</button>
+    <button onclick="changeright()">▶️</button>
+    <script type="text/javascript">
+        count=0;
+        webpg=["https://www.abc.com.py/","https://www.ultimahora.com/","https://www.nytimes.com/es/"];
+
+        
+        function changeright(){
+            if(count<(webpg.length-1)){
+                count+=1;
+            }
+            else{
+                count=0;
+            }
+            document.getElementById('screen').src=webpg[count];
+        }
+        function changeleft(){
+            if(count>0){
+                count-=1;
+            }
+            else{
+                count=2;
+            }
+            document.getElementById('screen').src=webpg[count];
+        }
+    </script>
+</body>
+</html>
